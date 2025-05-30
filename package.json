@@ -1,57 +1,55 @@
 {
-	"name": "vue-fabric-wrapper",
-	"description": "vue wrapper for fabricjs",
-	"keywords": [
-		"vuejs",
-		"fabricjs",
-		"vue-fabric",
-		"vue",
-		"fabric",
-		"canvas",
-		"components"
-	],
-	"version": "0.3.71",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/bensladden/vue-fabric-wrapper.git"
-	},
-	"files": [
-		"dist"
-	],
-	"homepage": "https://vue-fabric-wrapper.netlify.com/",
-	"author": "Ben Sladden",
-	"main": "dist/vue-fabric-wrapper.common.js",
-	"unpkg": "dist/vue-fabric-wrapper.umd.min.js",
-	"scripts": {
-		"serve": "vue-cli-service serve",
-		"build": "rimraf dist && vue-cli-service build",
-		"build:lib": "rimraf dist && vue-cli-service build --target lib ./src/components/index.js",
-		"lint": "vue-cli-service lint",
-		"docs:dev": "vuepress dev docs",
-		"docs:build": "vuepress build docs"
-	},
-	"license": "MIT",
-	"dependencies": {
-		"fabric": "4.0.0"
-	},
-	"devDependencies": {
-		"@vue/cli-plugin-babel": "4.2.3",
-		"@vue/cli-plugin-eslint": "4.2.3",
-		"@vue/cli-service": "4.2.3",
-		"@vue/eslint-config-prettier": "6.0.0",
-		"babel-eslint": "10.1.0",
-		"bootstrap-vue": "2.7.0",
-		"core-js": "3.6.4",
-		"eslint": "6.8.0",
-		"eslint-plugin-prettier": "3.1.2",
-		"eslint-plugin-vue": "6.2.2",
-		"exports-loader": "0.7.0",
-		"node-sass": "4.13.1",
-		"prettier": "1.19.1",
-		"rimraf": "3.0.2",
-		"sass-loader": "8.0.2",
-		"vue": "2.6.11",
-		"vue-template-compiler": "2.6.11",
-		"vuepress": "1.3.1"
-	}
+  "name": "vue3-fabric-wrapper",
+  "version": "1.0.0",
+  "description": "Vue 3 Fabric.js Wrapper with TypeScript support",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build && npm run build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
+    "build:lib": "vite build --mode lib",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "fabric",
+    "fabricjs",
+    "canvas",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
+  "dependencies": {
+    "fabric": "^6.0.2"
+  },
+  "devDependencies": {
+    "@types/fabric": "^5.3.7",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "@vue/tsconfig": "^0.4.0",
+    "eslint": "^8.0.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "~5.2.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.0.0",
+    "vue": "^3.3.0",
+    "vue-tsc": "^1.8.0"
+  }
 }
